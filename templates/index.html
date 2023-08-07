@@ -20,13 +20,20 @@
        {%for tool in tools%}
           <div>
             <div><h4>{{tool['Name']}}</h4></div>
-            <div><a type="button" class="btn btn-primary" href="https://www.google.com/" target="_blank">Primary</a><div/>
+            <div><form method="POST">
+        <label for="password_length">Password Length:</label>
+        <input type="number" name="password_length" value="12" min="6" max="50" required>
+        <button type="submit">Generate Password</button>
+    </form>
+    {% if PASSWORD %}
+    <h2>Generated Password:</h2>
+    <p>{{ PASSWORD }}</p>
+    {% endif %}</div>
           </div>
           
           
        {%endfor%}        
-      <div/>
-    </div>
+      
   </div>
   
   
