@@ -10,7 +10,7 @@
 </head>
 <body>
   {% include 'nav.html' %}
-  <div class"container">
+  <div class="container">
     <div>
       <h1>Logic Dilation</h1>
     </div>
@@ -25,10 +25,14 @@
         <input type="number" name="password_length" value="12" min="6" max="50" required>
         <button type="submit">Generate Password</button>
     </form>
-    {% if PASSWORD %}
+    
+   {% if PASSWORD %}
     <h2>Generated Password:</h2>
     <p>{{ PASSWORD }}</p>
-    {% endif %}</div>
+{% else %}
+    <p>Password not received.</p>
+{% endif %}
+</div>
           </div>
           
           
