@@ -33,12 +33,17 @@ def passwordgen():
         password_length = int(request.form.get('password_length', 12))
         print("password:",password_length)
         password = generate_password(password_length)
+        file = open('geek.txt','w')
+        file.write(password)
+        file.close()
         print("pw:",password)
         return render_template('index.html', PASSWORD=password,tools = TOOLS)
     else:
       print("NOT Received POST request:")
       return render_template('index.html', PASSWORD='',tools = TOOLS)
-    
+
+
+
 
 @app.route("/api/tools")  
 def list_tools():
